@@ -1,5 +1,6 @@
 import './App.css'
-import teste from './components/teste.js'
+import SayMyname from './components/SayMyName';
+import Pessoas from './components/pessoas';
 
 
 
@@ -7,9 +8,16 @@ function App() {
 
 
   return (
-    <>
-   <teste/>
-    </>
+   <div className='app'>
+    <SayMyname nome="Caio"/>
+    <Pessoas nome="Caio"
+    idade="28"
+    profissao="Programador"
+    foto="https://placehold.co/600x400"
+    
+    />
+
+   </div>
   )
 }
 
