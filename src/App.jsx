@@ -1,5 +1,6 @@
 import './App.css'
 import SayMyname from './components/SayMyName';
+import Itens from './components/Item';
 import Pessoas from './components/pessoas';
 
 
@@ -16,6 +17,7 @@ function App() {
     foto="https://placehold.co/600x400"
     
     />
+    
 
    </div>
   )
