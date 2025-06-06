@@ -1,7 +1,8 @@
 import './App.css'
-import SayMyname from './components/SayMyName';
-import Item from './components/Item';
-import Pessoas from './components/pessoas';
+import Eventos from './components/Eventos';
+import Form from './components/Form';
+
+
 
 
 
@@ -10,15 +11,10 @@ function App() {
 
   return (
    <div className='app'>
-    <SayMyname nome="Caio"/>
-    <Pessoas nome="Caio"
-    idade="28"
-    profissao="Programador"
-    foto="https://placehold.co/600x400"
-    
-    />
-    <Item/>
-    
+    <h1>Teste</h1>
+    <Eventos numero='1'/>
+    <Eventos numero='2'/>
+    <Form/>
 
    </div>
   )
