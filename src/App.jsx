@@ -12,8 +12,7 @@ function App() {
   return (
    <div className='app'>
     <h1>Teste</h1>
-    <Eventos numero='1'/>
-    <Eventos numero='2'/>
+    <Eventos/>  
     <Form/>
 
    </div>
