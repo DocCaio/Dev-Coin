@@ -1,0 +1,15 @@
+.socialList{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socialList  li {
+    margin: 0 1em;
+    list-style: none;
+}
+
+.socialList  svg {
+    font-size: 1.5em;
+    cursor: pointer;
+}
