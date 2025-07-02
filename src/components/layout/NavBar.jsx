@@ -18,12 +18,12 @@ export const NavBar = () => {
                     </li>
                     <li className={styles.item}>
                         <Link to="/projects">Projetos</Link>
-                    </li>
-                    <li className={styles.item}>
-                        <Link to="/contact">Contato</Link>
-                    </li>
+                    </li>                 
                     <li className={styles.item}>
                         <Link to="/company">Company</Link>
+                    </li>
+                       <li className={styles.item}>
+                        <Link to="/contact">Contato</Link>
                     </li>
                 </ul>
             </Container>
