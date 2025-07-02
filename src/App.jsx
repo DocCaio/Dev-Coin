@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import { Home } from './components/pages/Home';
-
-import {Contact} from './components/pages/Contact';
-import {Company} from './components/pages/Company';
-import {NewProject} from './components/pages/NewProjects';
+import { Contact } from './components/pages/Contact';
+import { Company } from './components/pages/Company';
+import { NewProject } from './components/pages/NewProjects';
+import { Container } from './components/layout/Container';
 
 function App() {
-
   return (
-    <Router>      
+    <Router>
+
       <nav>
         <ul>
           <li>
@@ -26,17 +26,19 @@ function App() {
           </li>
         </ul>
       </nav>
-      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/company" element={<Company />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/newprojects" element={<NewProject />} />
-      </Routes>
-      
+
+      <Container customClass="min-height">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/company" element={<Company />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/newprojects" element={<NewProject />} />
+        </Routes>
+      </Container>
       <footer>
         <p>Footer</p>
       </footer>
+
     </Router>
   );
 }
