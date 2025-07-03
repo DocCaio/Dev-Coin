@@ -4,8 +4,8 @@ import styles from './Footer.module.css';
 
 export const Footer = () => {
   return (
-   <footer>
-    <ul>
+   <footer className={styles.footer}>
+    <ul className={styles.social_list }>
       <li>
         <FaTwitter/>
       </li>
@@ -16,7 +16,9 @@ export const Footer = () => {
         <FaLinkedin/>
       </li>
     </ul>
-    <p><span>Costs</span>&copy; 2025</p>
+    <p className={styles.copy_right }>
+      <span>Costs</span>&copy; 2025
+      </p>
    </footer>
   );
 }
