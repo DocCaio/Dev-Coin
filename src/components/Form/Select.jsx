@@ -7,6 +7,16 @@ export const Select = ({ text , options , name ,handleOnChange , value}) => {
         <label htmlFor={name}>{text}:</label>
         <select name={name} id={name}>
             <option>Seçecione uma opção</option>
+            {options.map((option)=> {
+                <option 
+                value={option.id}
+                key={option.id}
+                
+                >
+                {option.name}
+                </option>
+
+            })}
 
 
         </select>
