@@ -10,8 +10,7 @@ export const Select = ({ text , options , name ,handleOnChange , value}) => {
             {options.map((option)=> {
                 <option 
                 value={option.id}
-                key={option.id}
-                
+                key={option.id}                
                 >
                 {option.name}
                 </option>
