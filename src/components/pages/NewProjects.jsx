@@ -5,13 +5,13 @@ import styles from './NewProjects.module.css';
 
 export const NewProject = () => {
 
-  const history = useNavigate();
+const navigate = useNavigate() 
 
   function creatPost(project) {
     project.cost = 0
     project.services = []
 
-    fetch("http:/localhost;5000/projetcs" , {
+    fetch("http://localhost;5000/projetcs" , {
       method: "GET",
       headers: {
         "Content-Type": 'aplication/json',
@@ -20,6 +20,7 @@ export const NewProject = () => {
     }).then((repo => repo.json())
       .then((data) => {
         console.log(data)
+        navigate("/projects", { message: "Projeto criado com sucesso!" })
       })    
     ).catch(err => console.log(err))
   }

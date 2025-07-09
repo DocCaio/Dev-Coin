@@ -29,6 +29,7 @@ export const ProjectForm = ({handleSubmit ,  btnText ,projectData}) => {
 
     const submit = (e) => {
         e.preventDefault()
+        console.log(project)
         handleSubmit(project)
     }
 
@@ -55,13 +56,16 @@ export const ProjectForm = ({handleSubmit ,  btnText ,projectData}) => {
             name="name"
             placeholder="Insira o nome do projeto"
             handleOnChange={handleChange}
+            value={project.name ? project.name : ''}
             
             />
            <Input
-            type="text" 
-            text="Nome do projeto"
-            name="name"
+            type="number" 
+            text="Orçamento do projeto"
+            name="busget"
             placeholder="Insira o orçamento total"
+            handleOnChange={handleCategory}
+            value={project.budget ? project.budget : ''}
             
             />
 
@@ -69,6 +73,9 @@ export const ProjectForm = ({handleSubmit ,  btnText ,projectData}) => {
            name="category_id" 
            text="Selecione a categoria"
            options={categories}
+           handleOnChange={handleCategory}
+           value={project.category ? project.category.id: ''}
+            
            />
 
             <SubmitButton text={btnText}/>
