@@ -11,8 +11,8 @@ const navigate = useNavigate()
     project.cost = 0
     project.services = []
 
-    fetch("http://localhost;5000/projetcs" , {
-      method: "GET",
+    fetch("http://localhost:5000/projetcs" , {
+      method: "POST",
       headers: {
         "Content-Type": 'aplication/json',
       },
