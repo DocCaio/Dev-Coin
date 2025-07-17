@@ -1,6 +1,7 @@
 
 import { BsPencil, BsFillTrashFill } from 'react-icons/bs';
 import styles from './ProjectCards.module.css';
+import { Link } from 'react-router';
 
 
 export const ProjectCards = ({id , name , budget ,category, handleRemove}) => {
@@ -11,11 +12,18 @@ export const ProjectCards = ({id , name , budget ,category, handleRemove}) => {
         <span>Orçamento:</span>R${budget}
        </p>
        <p className={styles.category_text}>
-        <span></span>{category}
+        <span className={`${styles[category.toLowerCase()]}`}></span>{category}
        </p>
-       <div>
-        <p>Editar</p>
-        <p>Remover</p>
+       <div className={styles.project_card_action}>
+        <Link to={'/'}>
+          <BsPencil/>
+        Editar
+        </Link>
+        <button>
+          <BsFillTrashFill/>
+          Excluir
+        </button>       
+    
        </div>
     </div>
    
