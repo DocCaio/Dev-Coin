@@ -5,6 +5,10 @@ import { Link } from 'react-router';
 
 
 export const ProjectCards = ({id , name , budget ,category, handleRemove}) => {
+  const remove = (e) => {
+    e.preventDefault()
+    handleRemove(id)
+  }
   return (
     <div>
        <h4>{name}</h4>
@@ -19,7 +23,7 @@ export const ProjectCards = ({id , name , budget ,category, handleRemove}) => {
           <BsPencil/>
         Editar
         </Link>
-        <button>
+        <button onClick={remove}>
           <BsFillTrashFill/>
           Excluir
         </button>       

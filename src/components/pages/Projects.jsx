@@ -3,13 +3,14 @@ import { Container } from '../layout/Container';
 import { Message } from '../layout/Message';
 import { LinkButton } from '../layout/LinkButton';
 import { Loading } from '../layout/Loading';
-import { useLocation } from 'react-router';
+import { data, useLocation } from 'react-router';
 import { ProjectCards } from '../project/ProjectCards';
 import { useState, useEffect } from 'react';
 
 export const Projects = () => {
   const [projects, setProjects] = useState([])
   const [removeLoading, setRemoveLoading] = useState([false])
+    const [projectMensage, setProjectMensage] = useState('')
   const location = useLocation();
   let message = '';
 
@@ -35,14 +36,34 @@ useEffect(() => {
   }, 300);
 }, []);
 
+function removeProject(id) {
+  fetch(`http://localhost:5000/projects/${id}`  ,{
+method: 'DELETE',
+headers: {
+
+  'Content-Type': 'application/json'
+},
+
+  }).then(resp => resp.json())
+  .then(data => {
+    setProjects(projects.filter(projects => projects.id !== id))
+    setProjectMensage('Projeto removido com sucesso!')
+  })
+    .catch(err => console.log(err))
+} 
+
+
+
 
   return (
     <div className={styles.projeto_container}>
       <div className={styles.title_container}>
         <h1>Meus Projetos!</h1>
         <LinkButton to="/newprojects" text="Criar Projeto" />
-        {message && <Message type="success" msg={message} />}
+     
       </div>
+          {message && <Message type="success" msg={message} />}
+          {message && <projectMensage type="success" msg={projectMensage} />}
       <Container customClass="start">
         {projects.length > 0 &&
           projects.map((project) => {
@@ -52,6 +73,7 @@ useEffect(() => {
               budget={project.budget}
               category={project.category?.name}
               key={project.id}
+              handleRemove={removeProject}
 
             />
           })}
