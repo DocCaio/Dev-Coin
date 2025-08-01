@@ -4,7 +4,8 @@ import styles from '../project/ProjectCard.module.css';
 function ServiceCard({ id, name, cost, description, hndleRemove }) {
 
     const remove = (e) => {
-
+        e.preventDefault();
+        hndleRemove(id.cost)
     }
 
 
