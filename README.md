@@ -1,4 +1,21 @@
-# React + Vite
+# Dev-Coin
+
+## Techs
+
+
+  [![My Skills](https://skillicons.dev/icons?i=html,css,nodejs,js,react,vite,npm)](https://skillicons.dev)
+
+  ### Print
+  <img src="public/print.png" alt="Minha Figura">
+
+
+
+
+  # :hammer: Funcionalidades
+
+- `functionality `:
+- Responsivo.
+- Crie o seu projeto , edit e delete através do metodo CRUD
 
 
 Bibliotecas istaladas:
