@@ -23,6 +23,9 @@ Bibliotecas istaladas:
 - react isons : npm install react-icons --save
 - react router dom: npm i react-router
 - json server: npm i json-server
+- npm install -g json-server
+  ou
+npm install --save-dev json-server
 - vite: npm create vite@latest
 
 Instalar dependências:
