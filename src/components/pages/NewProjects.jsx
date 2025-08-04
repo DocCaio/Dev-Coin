@@ -1,36 +1,39 @@
-import { data, useNavigate } from 'react-router';
-import { ProjectForm } from '../project/ProjectForm';
+import { useNavigate } from 'react-router-dom';
+import {ProjectForm} from '../project/ProjectForm';
 import styles from './NewProjects.module.css';
 
+function NewProject() {
+  const navigate = useNavigate();
 
-export const NewProject = () => {
+  function createPost(project) {
+    // initialize cost and services
+    project.cost = 0;
+    project.services = [];
 
-const navigate = useNavigate() 
-
-  function creatPost(project) {
-    project.cost = 0
-    project.services = []
-
-    fetch("http://localhost:5000/projetcs" , {
-      method: "POST",
+    fetch('http://localhost:5000/projects', {
+      method: 'POST',
       headers: {
-        "Content-Type": 'aplication/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(project),
-    }).then((repo => repo.json())
+    })
+      .then((resp) => resp.json())
       .then((data) => {
-        console.log(data)
-        navigate("/projects", { message: "Projeto criado com sucesso!" })
-      })    
-    ).catch(err => console.log(err))
+        // Use navigate instead of history.push
+        navigate('/projects', { state: { message: 'Projeto criado com sucesso!' } });
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
-
 
   return (
     <div className={styles.newproject_container}>
-      <h1>Criar projeto</h1>
-      <p>Criar seu projeto para depois adcionar</p>
-      <ProjectForm handleSubmit={creatPost} btnText="Criar Projeto"/>
+      <h1>Criar Projeto</h1>
+      <p>Crie seu projeto para depois adicionar os serviços</p>
+      <ProjectForm handleSubmit={createPost} btnText="Criar Projeto" />
     </div>
   );
 }
+
+export default NewProject;
