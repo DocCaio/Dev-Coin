@@ -3,10 +3,22 @@
 
 Bibliotecas istaladas:
 
-react isons : npm install react-icons --save
-react router dom: npm i react-router
-json server: npm i json-server
-vite: npm create vite@latest
+- react isons : npm install react-icons --save
+- react router dom: npm i react-router
+- json server: npm i json-server
+- vite: npm create vite@latest
+
+Instalar dependências:
+
+```js
+npm install
+```
+
+Rodar projeeto:
+
+```js
+npm run dev
+```
 
 
 Arquivo parckage.json adcionei backend json
