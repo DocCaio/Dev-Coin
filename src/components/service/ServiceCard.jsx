@@ -1,30 +1,28 @@
-import { BsFillTrashFill } from 'react-icons/bs';
-import styles from '../project/ProjectCard.module.css';
+import styles from '../project/ProjectCards.module.css'
 
-function ServiceCard({ id, name, cost, description, hndleRemove }) {
+import { BsFillTrashFill } from 'react-icons/bs'
 
-    const remove = (e) => {
-        e.preventDefault();
-        hndleRemove(id.cost)
-    }
+function ServiceCard({ id, name, cost, description, handleRemove }) {
+  const remove = (e) => {
+    e.preventDefault()
+    handleRemove(id, cost)
+  }
 
-
-    return (
-        <div className={styles.projrct_card}>
-            <h4>{name}</h4>
-            <p>
-                <span>Custo total</span>R${cost}
-            </p>
-            <p>{description}</p>
-            <div className={styles.projrct_card_actions}></div>
-            <button onClick={remove}>
-                <BsFillTrashFill />
-                Excluir
-
-            </button>
-
-        </div>
-    )
+  return (
+    <div className={styles.project_card}>
+      <h4>{name}</h4>
+      <p>
+        <span>Custo total:</span> R${cost}
+      </p>
+      <p>{description}</p>
+      <div className={styles.project_card_actions}>
+        <button onClick={remove}>
+          <BsFillTrashFill />
+          Excluir
+        </button>
+      </div>
+    </div>
+  )
 }
 
-export default ServiceCard;
+export default ServiceCard

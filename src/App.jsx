@@ -8,7 +8,7 @@ import { Projects } from './components/pages/Projects';
 import { Container } from './components/layout/Container';
 import { NavBar } from './components/layout/NavBar';
 import { Footer } from './components/layout/Footer';
-import { Project } from './components/pages/Project';
+import  Project  from './components/pages/Project';
 
 function App() {
   return (
